@@ -117,7 +117,7 @@ namespace HyperionScreenCap
             if ( SettingsManager.ApiEnabled )
             {
                 _apiServer = new ApiServer(this);
-                _apiServer.StartServer("localhost", SettingsManager.ApiPort.ToString());
+                _apiServer.StartServer(SettingsManager.ApiHostIP, SettingsManager.ApiPort.ToString());
             }
             else
             {

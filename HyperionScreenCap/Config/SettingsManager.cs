@@ -28,6 +28,7 @@ namespace HyperionScreenCap
         public static bool CheckUpdateOnStartup;
 
         // API
+        public static string ApiHostIP = "localhost";
         public static int ApiPort = 29445;
         public static bool ApiEnabled;
         public static bool ApiExcludedTimesEnabled;
@@ -60,6 +61,7 @@ namespace HyperionScreenCap
             Settings.Default.captureOnStartup = CaptureOnStartup;
             Settings.Default.pauseOnUserSwitch = PauseOnUserSwitch;
             Settings.Default.pauseOnSystemSuspend = PauseOnSystemSuspend;
+            Settings.Default.apiHostIP = ApiHostIP;
             Settings.Default.apiPort = ApiPort;
             Settings.Default.apiEnabled = ApiEnabled;
             Settings.Default.apiExcludedTimesEnabled = ApiExcludedTimesEnabled;
@@ -92,6 +94,7 @@ namespace HyperionScreenCap
             CaptureOnStartup = Settings.Default.captureOnStartup;
             PauseOnUserSwitch = Settings.Default.pauseOnUserSwitch;
             PauseOnSystemSuspend = Settings.Default.pauseOnSystemSuspend;
+            ApiHostIP = Settings.Default.apiHostIP;
             ApiPort = Settings.Default.apiPort;
             ApiEnabled = Settings.Default.apiEnabled;
             ApiExcludedTimesEnabled = Settings.Default.apiExcludedTimesEnabled;

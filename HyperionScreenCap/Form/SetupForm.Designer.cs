@@ -41,9 +41,11 @@
             this.clmnCaptureSource = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmnHyperionServers = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblHostIP = new System.Windows.Forms.Label();
+            this.tbHostIP = new System.Windows.Forms.TextBox();
             this.lblShowDisplaysMsg = new System.Windows.Forms.Label();
             this.lblShowDx11Displays = new System.Windows.Forms.LinkLabel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.lblApiPort = new System.Windows.Forms.Label();
             this.chkApiEnabled = new System.Windows.Forms.CheckBox();
             this.tbApiPort = new System.Windows.Forms.TextBox();
@@ -100,7 +102,7 @@
             this.tabPageGeneric.Controls.Add(this.tableLayoutPanel3);
             this.tabPageGeneric.Location = new System.Drawing.Point(4, 22);
             this.tabPageGeneric.Name = "tabPageGeneric";
-            this.tabPageGeneric.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPageGeneric.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageGeneric.Size = new System.Drawing.Size(756, 297);
             this.tabPageGeneric.TabIndex = 0;
             this.tabPageGeneric.Text = "General";
@@ -110,7 +112,7 @@
             this.btnEditTaskConfig.Enabled = false;
             this.btnEditTaskConfig.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditTaskConfig.Location = new System.Drawing.Point(4, 259);
-            this.btnEditTaskConfig.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.btnEditTaskConfig.Margin = new System.Windows.Forms.Padding(1);
             this.btnEditTaskConfig.Name = "btnEditTaskConfig";
             this.btnEditTaskConfig.Size = new System.Drawing.Size(65, 25);
             this.btnEditTaskConfig.TabIndex = 2;
@@ -123,7 +125,7 @@
             this.btnRemoveTaskConfig.Enabled = false;
             this.btnRemoveTaskConfig.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold);
             this.btnRemoveTaskConfig.Location = new System.Drawing.Point(312, 259);
-            this.btnRemoveTaskConfig.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.btnRemoveTaskConfig.Margin = new System.Windows.Forms.Padding(1);
             this.btnRemoveTaskConfig.Name = "btnRemoveTaskConfig";
             this.btnRemoveTaskConfig.Size = new System.Drawing.Size(65, 25);
             this.btnRemoveTaskConfig.TabIndex = 4;
@@ -135,7 +137,7 @@
             // 
             this.btnAddTaskConfig.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold);
             this.btnAddTaskConfig.Location = new System.Drawing.Point(239, 259);
-            this.btnAddTaskConfig.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.btnAddTaskConfig.Margin = new System.Windows.Forms.Padding(1);
             this.btnAddTaskConfig.Name = "btnAddTaskConfig";
             this.btnAddTaskConfig.Size = new System.Drawing.Size(65, 25);
             this.btnAddTaskConfig.TabIndex = 3;
@@ -164,7 +166,7 @@
             this.clmnCaptureSource,
             this.clmnHyperionServers});
             this.dgTaskConfig.Location = new System.Drawing.Point(4, 25);
-            this.dgTaskConfig.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.dgTaskConfig.Margin = new System.Windows.Forms.Padding(1);
             this.dgTaskConfig.MultiSelect = false;
             this.dgTaskConfig.Name = "dgTaskConfig";
             this.dgTaskConfig.ReadOnly = true;
@@ -221,7 +223,7 @@
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel1, 0, 4);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Right;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(401, 3);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(1);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 6;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -232,6 +234,40 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.Size = new System.Drawing.Size(352, 291);
             this.tableLayoutPanel3.TabIndex = 20;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lblHostIP);
+            this.panel1.Controls.Add(this.tbHostIP);
+            this.panel1.Controls.Add(this.lblShowDisplaysMsg);
+            this.panel1.Controls.Add(this.lblShowDx11Displays);
+            this.panel1.Controls.Add(this.lblApiPort);
+            this.panel1.Controls.Add(this.chkApiEnabled);
+            this.panel1.Controls.Add(this.tbApiPort);
+            this.panel1.Controls.Add(this.grpDeactivate);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(1, 129);
+            this.panel1.Margin = new System.Windows.Forms.Padding(1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(350, 161);
+            this.panel1.TabIndex = 34;
+            // 
+            // lblHostIP
+            // 
+            this.lblHostIP.AutoSize = true;
+            this.lblHostIP.Location = new System.Drawing.Point(11, 3);
+            this.lblHostIP.Name = "lblHostIP";
+            this.lblHostIP.Size = new System.Drawing.Size(20, 13);
+            this.lblHostIP.TabIndex = 39;
+            this.lblHostIP.Text = "IP:";
+            // 
+            // tbHostIP
+            // 
+            this.tbHostIP.Location = new System.Drawing.Point(37, 2);
+            this.tbHostIP.Name = "tbHostIP";
+            this.tbHostIP.Size = new System.Drawing.Size(100, 20);
+            this.tbHostIP.TabIndex = 38;
+            this.tbHostIP.Validating += new System.ComponentModel.CancelEventHandler(this.tbHostIP_Validating);
             // 
             // lblShowDisplaysMsg
             // 
@@ -258,25 +294,10 @@
             this.lblShowDx11Displays.Text = "Click here";
             this.lblShowDx11Displays.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblShowDx11Displays_LinkClicked);
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.lblShowDisplaysMsg);
-            this.panel1.Controls.Add(this.lblShowDx11Displays);
-            this.panel1.Controls.Add(this.lblApiPort);
-            this.panel1.Controls.Add(this.chkApiEnabled);
-            this.panel1.Controls.Add(this.tbApiPort);
-            this.panel1.Controls.Add(this.grpDeactivate);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(1, 129);
-            this.panel1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(350, 161);
-            this.panel1.TabIndex = 34;
-            // 
             // lblApiPort
             // 
             this.lblApiPort.AutoSize = true;
-            this.lblApiPort.Location = new System.Drawing.Point(9, 3);
+            this.lblApiPort.Location = new System.Drawing.Point(143, 3);
             this.lblApiPort.Name = "lblApiPort";
             this.lblApiPort.Size = new System.Drawing.Size(49, 13);
             this.lblApiPort.TabIndex = 25;
@@ -285,7 +306,7 @@
             // chkApiEnabled
             // 
             this.chkApiEnabled.AutoSize = true;
-            this.chkApiEnabled.Location = new System.Drawing.Point(135, 3);
+            this.chkApiEnabled.Location = new System.Drawing.Point(260, 2);
             this.chkApiEnabled.Name = "chkApiEnabled";
             this.chkApiEnabled.Size = new System.Drawing.Size(79, 17);
             this.chkApiEnabled.TabIndex = 27;
@@ -294,7 +315,7 @@
             // 
             // tbApiPort
             // 
-            this.tbApiPort.Location = new System.Drawing.Point(60, 2);
+            this.tbApiPort.Location = new System.Drawing.Point(194, 2);
             this.tbApiPort.Name = "tbApiPort";
             this.tbApiPort.Size = new System.Drawing.Size(60, 20);
             this.tbApiPort.TabIndex = 26;
@@ -409,7 +430,7 @@
             this.tableLayoutPanel1.Controls.Add(this.cbNotificationLevel, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(1, 93);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(1);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -447,9 +468,9 @@
             this.tabPageHelp.BackColor = System.Drawing.SystemColors.Control;
             this.tabPageHelp.Controls.Add(this.tbHelp);
             this.tabPageHelp.Location = new System.Drawing.Point(4, 22);
-            this.tabPageHelp.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.tabPageHelp.Margin = new System.Windows.Forms.Padding(1);
             this.tabPageHelp.Name = "tabPageHelp";
-            this.tabPageHelp.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.tabPageHelp.Padding = new System.Windows.Forms.Padding(1);
             this.tabPageHelp.Size = new System.Drawing.Size(756, 297);
             this.tabPageHelp.TabIndex = 2;
             this.tabPageHelp.Text = "Help";
@@ -460,7 +481,7 @@
             this.tbHelp.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbHelp.Font = new System.Drawing.Font("Arial", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbHelp.Location = new System.Drawing.Point(1, 1);
-            this.tbHelp.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.tbHelp.Margin = new System.Windows.Forms.Padding(1);
             this.tbHelp.Multiline = true;
             this.tbHelp.Name = "tbHelp";
             this.tbHelp.ReadOnly = true;
@@ -474,7 +495,7 @@
             // 
             this.btnCheckUpdates.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCheckUpdates.Location = new System.Drawing.Point(416, 341);
-            this.btnCheckUpdates.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.btnCheckUpdates.Margin = new System.Windows.Forms.Padding(1);
             this.btnCheckUpdates.Name = "btnCheckUpdates";
             this.btnCheckUpdates.Size = new System.Drawing.Size(110, 27);
             this.btnCheckUpdates.TabIndex = 40;
@@ -486,7 +507,7 @@
             // 
             this.btnViewLogs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnViewLogs.Location = new System.Drawing.Point(532, 341);
-            this.btnViewLogs.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.btnViewLogs.Margin = new System.Windows.Forms.Padding(1);
             this.btnViewLogs.Name = "btnViewLogs";
             this.btnViewLogs.Size = new System.Drawing.Size(110, 27);
             this.btnViewLogs.TabIndex = 41;
@@ -520,7 +541,7 @@
             // 
             this.btnDonate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDonate.Location = new System.Drawing.Point(300, 341);
-            this.btnDonate.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.btnDonate.Margin = new System.Windows.Forms.Padding(1);
             this.btnDonate.Name = "btnDonate";
             this.btnDonate.Size = new System.Drawing.Size(110, 27);
             this.btnDonate.TabIndex = 100;
@@ -604,5 +625,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clmnHyperionServers;
         private System.Windows.Forms.Button btnEditTaskConfig;
         private System.Windows.Forms.Button btnDonate;
+        private System.Windows.Forms.Label lblHostIP;
+        private System.Windows.Forms.TextBox tbHostIP;
     }
 }

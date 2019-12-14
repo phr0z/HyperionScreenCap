@@ -10,6 +10,7 @@ using System.Diagnostics;
 using HyperionScreenCap.Helper;
 using System.Collections.Generic;
 using System.Text;
+using System.Net;
 
 namespace HyperionScreenCap
 {
@@ -43,6 +44,7 @@ namespace HyperionScreenCap
                 chkPauseUserSwitch.Checked = SettingsManager.PauseOnUserSwitch;
                 chkPauseSuspend.Checked = SettingsManager.PauseOnSystemSuspend;
                 tbApiPort.Text = SettingsManager.ApiPort.ToString();
+                tbHostIP.Text = SettingsManager.ApiHostIP;
                 chkApiEnabled.Checked = SettingsManager.ApiEnabled;
                 chkApiExcludeTimesEnabled.Checked = SettingsManager.ApiExcludedTimesEnabled;
                 tbApiExcludeStart.Text = SettingsManager.ApiExcludeTimeStart.ToString("HH:mm");
@@ -129,6 +131,7 @@ namespace HyperionScreenCap
                 SettingsManager.PauseOnUserSwitch = chkPauseUserSwitch.Checked;
                 SettingsManager.PauseOnSystemSuspend = chkPauseSuspend.Checked;
                 SettingsManager.ApiPort = int.Parse(tbApiPort.Text);
+                SettingsManager.ApiHostIP = tbHostIP.Text;
                 SettingsManager.ApiEnabled = chkApiEnabled.Checked;
                 SettingsManager.ApiExcludedTimesEnabled = chkApiExcludeTimesEnabled.Checked;
                 SettingsManager.ApiExcludeTimeStart = DateTime.Parse(tbApiExcludeStart.Text);
@@ -171,6 +174,12 @@ namespace HyperionScreenCap
                 }
             }
             return isValid;
+        }
+
+        private bool ValidatortbApiHostIP(string HostIP)
+        {
+            IPAddress test;
+            return IPAddress.TryParse(HostIP, out test);
         }
 
         public Boolean ValidatorDateTime(string input)
@@ -305,6 +314,15 @@ namespace HyperionScreenCap
         {
             DonateForm donateForm = new DonateForm();
             donateForm.ShowDialog();
+        }
+
+        private void tbHostIP_Validating(object sender, CancelEventArgs e)
+        {
+            if (ValidatortbApiHostIP(tbHostIP.Text) == false && tbHostIP.Text != "localhost" && tbHostIP.Text != "+")
+            {
+                MessageBox.Show(@"Invalid IP address filled for Host IP, specify a correct IP address or use localhost");
+                e.Cancel = true;
+            }
         }
     }
 }
